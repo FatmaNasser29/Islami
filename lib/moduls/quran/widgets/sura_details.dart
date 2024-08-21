@@ -1,13 +1,25 @@
-import 'package:flutter/material.dart';
-import 'package:islami/core/theme/application_theme.dart';
+import 'dart:io';
 
-class SuraDetails extends StatelessWidget {
+import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:islami/core/theme/application_theme.dart';
+import 'package:islami/moduls/quran/widgets/sura_name.dart';
+
+class SuraDetails extends StatefulWidget {
   static const String routeName = "SuraDetails";
   const SuraDetails({super.key});
 
   @override
+  State<SuraDetails> createState() => _SuraDetailsState();
+}
+
+class _SuraDetailsState extends State<SuraDetails> {
+  @override
   Widget build(BuildContext context) {
     var theme = Theme.of(context);
+    var data = ModalRoute.of(context)?.settings.arguments as SuraData;
+
+    if (versesList.isEmpty) loadQuranDetails(data.number);
     return Container(
       decoration: BoxDecoration(
           image: DecorationImage(
@@ -33,7 +45,7 @@ class SuraDetails extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(
-                    "اسم السوره",
+                    "سوره ${data.name}",
                   ),
                   SizedBox(
                     width: 20,
@@ -42,10 +54,26 @@ class SuraDetails extends StatelessWidget {
                 ],
               ),
               Divider(),
+              Expanded(
+                  child: ListView.builder(
+                itemBuilder: (context, index) => Text(
+                  " {${index + 1}} ${versesList[index]}",
+                  style: theme.textTheme.bodySmall,
+                  textAlign: TextAlign.center,
+                ),
+                itemCount: versesList.length,
+              ))
             ],
           ),
         ),
       ),
     );
+  }
+
+  List<String> versesList = [];
+  Future<void> loadQuranDetails(String suranumber) async {
+    String content = await rootBundle.loadString("assets/sura/$suranumber.txt");
+    versesList = content.split("\n");
+    setState(() {});
   }
 }

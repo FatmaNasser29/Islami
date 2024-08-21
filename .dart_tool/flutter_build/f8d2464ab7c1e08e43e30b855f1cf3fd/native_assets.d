@@ -1,0 +1,1 @@
+ /Users/fatmaabdelnasser/GithubProjects/Islami/.dart_tool/flutter_build/f8d2464ab7c1e08e43e30b855f1cf3fd/native_assets.yaml: 

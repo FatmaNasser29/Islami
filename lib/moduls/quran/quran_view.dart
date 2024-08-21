@@ -2,15 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:islami/moduls/quran/widgets/sura_details.dart';
 import 'package:islami/moduls/quran/widgets/sura_name.dart';
 
-class QuranView extends StatefulWidget {
+class QuranView extends StatelessWidget {
   static const String routeName = "QuranView";
-  const QuranView({super.key});
+  QuranView({super.key});
 
-  @override
-  State<QuranView> createState() => _QuranViewState();
-}
-
-class _QuranViewState extends State<QuranView> {
   List<String> suraNames = [
     "الفاتحه",
     "البقرة",
@@ -163,13 +158,16 @@ class _QuranViewState extends State<QuranView> {
           child: ListView.builder(
             itemBuilder: (context, index) => InkWell(
               onTap: () {
-                Navigator.pushNamed(context, SuraDetails.routeName);
+                Navigator.pushNamed(
+                  context,
+                  SuraDetails.routeName,
+                  arguments: SuraData(
+                      name: suraNames[index], number: (index + 1).toString()),
+                );
               },
               child: SuraName(
                 data: SuraData(
                     name: suraNames[index], number: (index + 1).toString()),
-                // suraName: suraNames[index],
-                // suraNumber: (index + 1).toString(),
               ),
             ),
             itemCount: suraNames.length,
