@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class RadioView extends StatelessWidget {
   const RadioView({super.key});
 
   @override
   Widget build(BuildContext context) {
+    var lang = AppLocalizations.of(context)!;
+
     var theme = Theme.of(context);
     return Center(
         child: Column(
@@ -20,7 +23,7 @@ class RadioView extends StatelessWidget {
           height: 60,
         ),
         Text(
-          "اذاعه القران الكريم",
+          lang.holyQuranRadio,
           style: theme.textTheme.titleMedium,
         ),
         SizedBox(

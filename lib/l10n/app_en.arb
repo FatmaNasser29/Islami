@@ -4,5 +4,13 @@
     "sebha": "Sebha",
     "quran": "Quran",
     "hadith": "Hadith",
-    "setting": "Setting"
+    "setting": "Setting",
+    "languge": "languge",
+    "theme": "theme",
+    "theNameOfTheSurah": "The name of the surah",
+    "numberOfVerses": "Number of verses",
+    "numberOfPraises": "Number of praises",
+    "holyQuranRadio": "Holy Quran Radio",
+    "hadiths": "Hadiths",
+    "numberOfSura": "Number Of Sura "
 }

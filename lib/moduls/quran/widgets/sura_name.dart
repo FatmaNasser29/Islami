@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:islami/core/setting_provider.dart';
+import 'package:islami/core/theme/application_theme.dart';
+import 'package:provider/provider.dart';
 
 class SuraName extends StatelessWidget {
   final SuraData data;
@@ -7,6 +11,9 @@ class SuraName extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var lang = AppLocalizations.of(context)!;
+    var provider = Provider.of<SettingProvider>(context);
+
     var theme = Theme.of(context);
     return Row(
       children: [
@@ -14,7 +21,8 @@ class SuraName extends StatelessWidget {
           child: Text(
             textAlign: TextAlign.center,
             data.number,
-            style: theme.textTheme.bodyLarge,
+            style: theme.textTheme.bodyLarge?.copyWith(
+                color: provider.isDark() ? Colors.white : Colors.black),
           ),
         ),
         SizedBox(height: 30, child: VerticalDivider()),
@@ -22,7 +30,8 @@ class SuraName extends StatelessWidget {
           child: Text(
             textAlign: TextAlign.center,
             data.name,
-            style: theme.textTheme.bodyLarge,
+            style: theme.textTheme.bodyLarge?.copyWith(
+                color: provider.isDark() ? Colors.white : Colors.black),
           ),
         )
       ],

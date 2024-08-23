@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:islami/moduls/hadith/hadith_details.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class HadithView extends StatefulWidget {
   HadithView({super.key});
@@ -14,6 +15,8 @@ class _HadithViewState extends State<HadithView> {
 
   @override
   Widget build(BuildContext context) {
+    var lang = AppLocalizations.of(context)!;
+
     var theme = Theme.of(context);
     if (hadithDataList.isEmpty) loadHadithData();
 
@@ -25,7 +28,7 @@ class _HadithViewState extends State<HadithView> {
         ),
         Divider(),
         Text(
-          "الاحاديث",
+          lang.hadiths,
           style: theme.textTheme.titleMedium,
         ),
         Divider(),
@@ -39,7 +42,7 @@ class _HadithViewState extends State<HadithView> {
                               body: hadithDataList[index].body));
                     },
                     child: Text(
-                      "${index + 1} الحديث رقم ",
+                      " ${lang.hadith} ${index + 1}",
                       textAlign: TextAlign.center,
                       style: theme.textTheme.bodySmall,
                     ),

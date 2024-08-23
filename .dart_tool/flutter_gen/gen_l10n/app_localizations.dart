@@ -128,6 +128,54 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Setting'**
   String get setting;
+
+  /// No description provided for @languge.
+  ///
+  /// In en, this message translates to:
+  /// **'languge'**
+  String get languge;
+
+  /// No description provided for @theme.
+  ///
+  /// In en, this message translates to:
+  /// **'theme'**
+  String get theme;
+
+  /// No description provided for @theNameOfTheSurah.
+  ///
+  /// In en, this message translates to:
+  /// **'The name of the surah'**
+  String get theNameOfTheSurah;
+
+  /// No description provided for @numberOfVerses.
+  ///
+  /// In en, this message translates to:
+  /// **'Number of verses'**
+  String get numberOfVerses;
+
+  /// No description provided for @numberOfPraises.
+  ///
+  /// In en, this message translates to:
+  /// **'Number of praises'**
+  String get numberOfPraises;
+
+  /// No description provided for @holyQuranRadio.
+  ///
+  /// In en, this message translates to:
+  /// **'Holy Quran Radio'**
+  String get holyQuranRadio;
+
+  /// No description provided for @hadiths.
+  ///
+  /// In en, this message translates to:
+  /// **'Hadiths'**
+  String get hadiths;
+
+  /// No description provided for @numberOfSura.
+  ///
+  /// In en, this message translates to:
+  /// **'Number Of Sura '**
+  String get numberOfSura;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

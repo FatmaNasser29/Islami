@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:islami/core/setting_provider.dart';
 import 'package:islami/core/theme/application_theme.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:provider/provider.dart';
 
 class SebhaView extends StatefulWidget {
   SebhaView({super.key});
@@ -19,6 +22,9 @@ class _SebhaViewState extends State<SebhaView> {
 
   @override
   Widget build(BuildContext context) {
+    var lang = AppLocalizations.of(context)!;
+    var provider = Provider.of<SettingProvider>(context);
+
     var theme = Theme.of(context);
     return Column(
       children: [
@@ -50,7 +56,7 @@ class _SebhaViewState extends State<SebhaView> {
           ],
         ),
         Text(
-          "عدد التسبيحات",
+          lang.numberOfPraises,
           style: theme.textTheme.bodyMedium,
         ),
         SizedBox(

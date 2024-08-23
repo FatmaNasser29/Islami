@@ -3,6 +3,14 @@
     "radio": "راديو",
     "sebha": "سبحه",
     "quran": "قران",
-    "hadith": "احاديث",
-    "setting": "اعدادات"
+    "hadith": "حديث",
+    "setting": "اعدادات",
+    "languge": "اللغه",
+    "theme": "النمط",
+    "theNameOfTheSurah": "اسم السوره",
+    "numberOfVerses": "عدد الايات",
+    "numberOfPraises": "عدد التسبيحات",
+    "holyQuranRadio": "اذاعه القران الكريم",
+    "hadiths": "احاديث",
+    "numberOfSura": "رقم السوره"
 }

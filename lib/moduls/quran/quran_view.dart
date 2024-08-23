@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:islami/moduls/quran/widgets/sura_details.dart';
 import 'package:islami/moduls/quran/widgets/sura_name.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class QuranView extends StatelessWidget {
   static const String routeName = "QuranView";
@@ -125,6 +126,8 @@ class QuranView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var lang = AppLocalizations.of(context)!;
+
     var theme = Theme.of(context);
     return Center(
         child: Column(
@@ -139,7 +142,7 @@ class QuranView extends StatelessWidget {
             Expanded(
               child: Text(
                 textAlign: TextAlign.center,
-                "رقم السوره",
+                lang.numberOfSura,
                 style: theme.textTheme.titleMedium,
               ),
             ),
@@ -147,7 +150,7 @@ class QuranView extends StatelessWidget {
             Expanded(
               child: Text(
                 textAlign: TextAlign.center,
-                "اسم السوره",
+                lang.theNameOfTheSurah,
                 style: theme.textTheme.titleMedium,
               ),
             )
