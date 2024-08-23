@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:animated_menu/animated_menu.dart';
 import 'package:animated_custom_dropdown/custom_dropdown.dart';
 import 'package:islami/core/setting_provider.dart';
+import 'package:islami/core/theme/application_theme.dart';
 import 'package:provider/provider.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
@@ -25,16 +26,8 @@ class _SettingViewState extends State<SettingView> {
     var provider = Provider.of<SettingProvider>(context);
     var lang = AppLocalizations.of(context)!;
     return Column(crossAxisAlignment: CrossAxisAlignment.stretch, children: [
-      Container(
-        padding: EdgeInsets.all(20),
-        height: mediaQuery.size.height * .10,
-        width: mediaQuery.size.width,
-        decoration: BoxDecoration(color: Color(0xFFB7935F)),
-        child: Text(
-          lang.setting,
-          style: theme.textTheme.titleLarge
-              ?.copyWith(color: Colors.white, fontSize: 22),
-        ),
+      SizedBox(
+        height: 40,
       ),
       Padding(
         padding: const EdgeInsets.all(15),
@@ -48,6 +41,14 @@ class _SettingViewState extends State<SettingView> {
       Padding(
         padding: const EdgeInsets.all(10),
         child: CustomDropdown<String>(
+          decoration: CustomDropdownDecoration(
+            closedFillColor: provider.isDark()
+                ? Color(0xFF141A2E)
+                : ApplicationThemeData.primaryColor,
+            expandedFillColor: provider.isDark()
+                ? Color(0xFF141A2E)
+                : ApplicationThemeData.primaryColor,
+          ),
           hintText: 'Select Languge',
           items: languge,
           initialItem:
@@ -75,6 +76,14 @@ class _SettingViewState extends State<SettingView> {
       Padding(
         padding: const EdgeInsets.all(10),
         child: CustomDropdown<String>(
+          decoration: CustomDropdownDecoration(
+            closedFillColor: provider.isDark()
+                ? Color(0xFF141A2E)
+                : ApplicationThemeData.primaryColor,
+            expandedFillColor: provider.isDark()
+                ? Color(0xFF141A2E)
+                : ApplicationThemeData.primaryColor,
+          ),
           hintText: 'Select Theme Mode',
           items: themeMode,
           initialItem: provider.currentThemeMode == "Light"

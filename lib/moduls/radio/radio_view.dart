@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:islami/core/setting_provider.dart';
+import 'package:provider/provider.dart';
 
 class RadioView extends StatelessWidget {
   const RadioView({super.key});
@@ -9,6 +11,7 @@ class RadioView extends StatelessWidget {
     var lang = AppLocalizations.of(context)!;
 
     var theme = Theme.of(context);
+    var provider = Provider.of<SettingProvider>(context);
     return Center(
         child: Column(
       children: [
@@ -34,6 +37,9 @@ class RadioView extends StatelessWidget {
           children: [
             Image.asset(
               "assets/images/Icon metro-back.png",
+              // color: provider.isDark()
+              //     ? theme.primaryColorDark
+              //     : theme.primaryColor,
               scale: 3,
             ),
             Image.asset(

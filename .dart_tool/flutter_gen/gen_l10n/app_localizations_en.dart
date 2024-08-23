@@ -29,7 +29,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get theme => 'theme';
 
   @override
-  String get theNameOfTheSurah => 'The name of the surah';
+  String get theNameOfTheSurah => 'Name of Surah';
 
   @override
   String get numberOfVerses => 'Number of verses';

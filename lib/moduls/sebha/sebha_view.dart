@@ -27,6 +27,7 @@ class _SebhaViewState extends State<SebhaView> {
 
     var theme = Theme.of(context);
     return Column(
+      crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
         SizedBox(
           height: 20,
@@ -64,7 +65,9 @@ class _SebhaViewState extends State<SebhaView> {
         ),
         Container(
             decoration: BoxDecoration(
-                color: Color(0xFFB7935F).withOpacity(.7),
+                color: provider.isDark()
+                    ? Color(0xFF141A2E)
+                    : Color(0xFFB7935F).withOpacity(.7),
                 borderRadius: BorderRadius.circular(33)),
             padding: EdgeInsets.all(15),
             child: Text("$count ")),
@@ -78,10 +81,16 @@ class _SebhaViewState extends State<SebhaView> {
           },
           child: Container(
               decoration: BoxDecoration(
-                  color: Color(0xFFB7935F),
+                  color: provider.isDark()
+                      ? ApplicationThemeData.primaryDarkColor
+                      : Color(0xFFB7935F),
                   borderRadius: BorderRadius.circular(33)),
               padding: EdgeInsets.all(15),
-              child: Text("${azkar[index]}")),
+              child: Text(
+                "${azkar[index]}",
+                style: TextStyle(
+                    color: provider.isDark() ? Colors.black : Colors.white),
+              )),
         )
       ],
     );

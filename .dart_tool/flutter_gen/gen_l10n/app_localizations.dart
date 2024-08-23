@@ -144,7 +144,7 @@ abstract class AppLocalizations {
   /// No description provided for @theNameOfTheSurah.
   ///
   /// In en, this message translates to:
-  /// **'The name of the surah'**
+  /// **'Name of Surah'**
   String get theNameOfTheSurah;
 
   /// No description provided for @numberOfVerses.
